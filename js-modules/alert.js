@@ -2,4 +2,4 @@ function alert(){
     alert("beep");
 }
 
-module.exports = { alert };
+export default { alert };
