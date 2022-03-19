@@ -1,6 +1,8 @@
 function alert_fun(){
-    var alert = require('alert');
-    alert("beep");
+    var popup = require('popups');
+        popup.alert({
+      content: 'Hello!'
+    });
 }
 
 module.exports = { alert_fun };
