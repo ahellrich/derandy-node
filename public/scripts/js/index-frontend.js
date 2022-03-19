@@ -1,6 +1,6 @@
 document.addEventListener("DOMContentLoaded", function(event){
-   require("../../scripts/js/alert.js");
-   alert.gib_laut();
+   $alert = require("../../scripts/js/alert.js");
+   $alert.gib_laut();
   });
 
   function require(script) {
