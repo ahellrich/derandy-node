@@ -4,7 +4,7 @@ const port = process.env.PORT;
 const path = require('path');
 const alert = require("./js-modules/alert");
 
-alert.alert();
+
 
 app.use(express.static(path.join(__dirname, 'public')));
 
