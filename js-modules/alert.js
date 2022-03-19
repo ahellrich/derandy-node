@@ -1,5 +1,5 @@
-function alert(){
+function alert_fun(){
     alert("beep");
 }
 
-module.exports = { alert };
+module.exports = { alert_fun };
