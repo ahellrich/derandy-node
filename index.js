@@ -2,7 +2,7 @@ const express = require('express')
 const app = express();
 const port = process.env.PORT;
 const path = require('path');
-const alert = require("./js-modules/alert.js").default;
+const alert = require("./js-modules/alert");
 
 alert.alert();
 
