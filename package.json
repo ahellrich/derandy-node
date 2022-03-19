@@ -1,0 +1,22 @@
+{
+  "name": "derandy-test",
+  "version": "1.0.0",
+  "description": "a simple test app to call php from node js",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://git.heroku.com/derandy-test.git"
+  },
+  "keywords": [
+    "php",
+    "test"
+  ],
+  "author": "Andreas Hellrich",
+  "license": "Unlicense",
+  "dependencies": {
+    "express": "^4.17.3"
+  }
+}
