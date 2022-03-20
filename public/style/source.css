@@ -1,6 +1,6 @@
 
 .code {
-	white-space:break-spaces;
+	white-space:normal;
 	border: 1px solid black;
 	background-color:burlywood;
 }
