@@ -1,7 +1,7 @@
 function gib_laut(){
 
     $.ajax({
-            url:"https://derandy-php.herokuapp.com/add.php",    //the page containing php script
+            url:"https://derandy-php.herokuapp.com/subtract1.php",    //the page containing php script
             type: "post",    //request type,
             dataType: 'json',
             data: {x: 3, y: 5},
