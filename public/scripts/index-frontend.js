@@ -1,8 +1,8 @@
 document.addEventListener("DOMContentLoaded", function(event){
-   require("./math.js");
-   require("./onclick.js");
-   require("./vars.js");
-   require("./showResult.js");
+   require("/math.js");
+   require("/onclick.js");
+   require("/vars.js");
+   require("/showResult.js");
   });
 
   function require(script) {
