@@ -1,13 +1,13 @@
-function math(op,x,y){
-
+function math(op){
+    setVariables();
     $.ajax({
             url:"https://derandy-php.herokuapp.com/"+op+".php",    //the page containing php script
             type: "post",    //request type,
             dataType: 'json',
-            data: {x: x, y: y},
+            data: {x: xval, y: yval},
             success:function(result){
 				
-                alert(result);
+                showResult(result);
             },
             error:function(){
 				console.log("error");
