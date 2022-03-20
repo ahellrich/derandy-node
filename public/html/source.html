@@ -29,5 +29,38 @@
          }
         </code>
     </span>
+    <span id="math" class="sourcespan">
+        <h3>math.js</h3>
+        <code>
+            function math(op){
+                setVariables();
+                $.ajax({
+                        url:"https://derandy-php.herokuapp.com/"+op+".php",    //the page containing php script
+                        type: "post",    //request type,
+                        dataType: 'json',
+                        data: {x: xval, y: yval},
+                        success:function(result){
+                            showResult(result);
+                        },
+                        error:function(){
+                            showResult("ERROR");
+                        }
+                    });
+            }
+        </code>
+    </span>
+
+    <span id="onclick" class="sourcespan">
+        <h3>onclick.js</h3>
+        <code>
+            document.getElementById("add").onclick=function(){math("add")};
+            document.getElementById("multiply").onclick=function(){math("multiply")};
+            document.getElementById("sub1").onclick=function(){math("subtract1")};
+            document.getElementById("sub2").onclick=function(){math("subtract2")};
+            document.getElementById("div1").onclick=function(){math("divide1")};
+            document.getElementById("div2").onclick=function(){math("divide2")};
+        </code>
+    </span>
+
   </body>
 </html>
