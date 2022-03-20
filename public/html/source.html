@@ -98,5 +98,150 @@
     </div>
     <hr>
     <h1>PHP</h1>
+    <div id="add" class="sourcediv">
+        <h3>add.php</h3>
+        <div class="code">
+            &lt;?php
+   header("Access-Control-Allow-Origin: *");
+   header("Access-Control-Allow-Headers: *");
+
+   function add($a,$b){
+      $x = $a;
+      $y = $b;
+    echo $x + $y;
+   }
+   if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+      
+      add($_POST['x'],$_POST['y']);
+      }
+      if ($_SERVER['REQUEST_METHOD'] === 'GET') {
+      echo "Schön, dass Sie hier sind, aber hier gibt es nichts zu sehen, die Datei ist für POST Befehle gedacht";
+      }
+   
+        </div>
+    </div>
+    <div id="subt1" class="sourcediv">
+        <h3>subtract1.php</h3>
+        <div class="code">
+            &lt;?php
+            header("Access-Control-Allow-Origin: *");
+            header("Access-Control-Allow-Headers: *");
+         
+            function sub1($a,$b){
+               $x = $a;
+               $y = $b;
+             echo $x - $y;
+            }
+            if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+               
+               sub1($_POST['x'],$_POST['y']);
+               }
+               if ($_SERVER['REQUEST_METHOD'] === 'GET') {
+               echo "Schön, dass Sie hier sind, aber hier gibt es nichts zu sehen, die Datei ist für POST Befehle gedacht";
+               }
+   
+        </div>
+    </div>
+    <div id="subt2" class="sourcediv">
+        <h3>subtract2.php</h3>
+        <div class="code">
+            &lt;?php
+            header("Access-Control-Allow-Origin: *");
+            header("Access-Control-Allow-Headers: *");
+         
+            function sub2($a,$b){
+               $x = $a;
+               $y = $b;
+             echo $y - $x;
+            }
+            if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+               
+               sub2($_POST['x'],$_POST['y']);
+               }
+               if ($_SERVER['REQUEST_METHOD'] === 'GET') {
+               echo "Schön, dass Sie hier sind, aber hier gibt es nichts zu sehen, die Datei ist für POST Befehle gedacht";
+               }
+   
+        </div>
+    </div>
+    <div id="mult" class="sourcediv">
+        <h3>multiply.php</h3>
+        <div class="code">
+            &lt;?php
+            header("Access-Control-Allow-Origin: *");
+            header("Access-Control-Allow-Headers: *");
+         
+            function mult($a,$b){
+               $x = $a;
+               $y = $b;
+             echo $x * $y;
+            }
+            if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+               
+               mult($_POST['x'],$_POST['y']);
+               }
+               if ($_SERVER['REQUEST_METHOD'] === 'GET') {
+               echo "Schön, dass Sie hier sind, aber hier gibt es nichts zu sehen, die Datei ist für POST Befehle gedacht";
+               }
+            
+   
+        </div>
+    </div>
+    <div id="di1" class="sourcediv">
+        <h3>divide1.php</h3>
+        <div class="code">
+            &lt;?php
+            header("Access-Control-Allow-Origin: *");
+            header("Access-Control-Allow-Headers: *");
+         
+            function div1($a,$b){
+               $x = $a;
+               $y = $b;
+              
+               echo $x / $y;
+            }
+            if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+               if($_POST['y']!=0)
+               div1($_POST['x'],$_POST['y']);
+               else
+               echo NAN;
+               }
+               
+               if ($_SERVER['REQUEST_METHOD'] === 'GET') {
+               echo "Schön, dass Sie hier sind, aber hier gibt es nichts zu sehen, die Datei ist für POST Befehle gedacht";
+               }
+            
+            
+   
+        </div>
+    </div>
+
+    <div id="di2" class="sourcediv">
+        <h3>divide2.php</h3>
+        <div class="code">
+            &lt;?php
+            header("Access-Control-Allow-Origin: *");
+            header("Access-Control-Allow-Headers: *");
+         
+            function div1($a,$b){
+               $x = $a;
+               $y = $b;
+              
+               echo $y / $x;
+            }
+            if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+               if($_POST['x']!=0)
+               div1($_POST['x'],$_POST['y']);
+               else
+               echo NAN;
+               }
+               
+               if ($_SERVER['REQUEST_METHOD'] === 'GET') {
+               echo "Schön, dass Sie hier sind, aber hier gibt es nichts zu sehen, die Datei ist für POST Befehle gedacht";
+               }
+            
+   
+        </div>
+    </div>
   </body>
 </html>
