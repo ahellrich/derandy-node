@@ -6,8 +6,7 @@
 	background-color:burlywood;
     padding: 1em;
     font-family:'Courier New', Courier, monospace;
-    overflow-y: scroll;
-    overflow-x: scroll;
+    overflow:auto;
   scrollbar-color: rebeccapurple green;
   scrollbar-width: thin;
 }
