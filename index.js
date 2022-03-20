@@ -7,7 +7,7 @@ const path = require('path');
 
 app.use(express.static(path.join(__dirname, 'public')));
 
-express.use(cors());
+app.use('cors enable mechanism');
 
 app.get('/', (req, res) => {
     res.sendFile(path.join(__dirname, 'public/html/index.html'));
