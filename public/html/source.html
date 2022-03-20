@@ -7,7 +7,7 @@
   <body>
     <span id="index-frontend" class="sourcespan">
         <h3>index-frontend.js</h3>
-        <code class="code">
+        <span class="code">
         document.addEventListener("DOMContentLoaded", function(event){
             require("../scripts/math.js");
             require("../scripts/onclick.js");
@@ -28,11 +28,11 @@
                  }
              });
          }
-        </code>
+        </span>
     </span>
     <span id="math" class="sourcespan">
         <h3>math.js</h3>
-        <code class="code">
+        <span class="code">
             function math(op){
                 setVariables();
                 $.ajax({
@@ -48,19 +48,30 @@
                         }
                     });
             }
-        </code>
+        </span>
     </span>
 
     <span id="onclick" class="sourcespan">
         <h3>onclick.js</h3>
-        <code class="code">
+        <span class="code">
             document.getElementById("add").onclick=function(){math("add")};
             document.getElementById("multiply").onclick=function(){math("multiply")};
             document.getElementById("sub1").onclick=function(){math("subtract1")};
             document.getElementById("sub2").onclick=function(){math("subtract2")};
             document.getElementById("div1").onclick=function(){math("divide1")};
             document.getElementById("div2").onclick=function(){math("divide2")};
-        </code>
+        </span>
+    </span>
+
+    <span id="showResult" class="sourcespan">
+        <h3>showResult.js</h3>
+        <span class="code">
+            function showResult(result){
+                document.getElementById("ergebnisline").innerHTML = result;
+                document.getElementById("x").value = 0;
+                document.getElementById("y").value = 0;
+            } 
+        </span>
     </span>
 
   </body>
