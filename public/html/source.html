@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title> Source </title>
+  </head>
+  <body>
+    <span id="index-frontend" class="sourcespan">
+        <h3></h3>
+        <h5>
+        document.addEventListener("DOMContentLoaded", function(event){
+            require("../scripts/math.js");
+            require("../scripts/onclick.js");
+            require("../scripts/vars.js");
+            require("../scripts/showResult.js");
+           });
+         
+           function require(script) {
+             $.ajax({
+                 url: script,
+                 dataType: "script",
+                 async: false,           
+                 success: function () {
+                     // all good...
+                 },
+                 error: function () {
+                     throw new Error("Could not load script " + script);
+                 }
+             });
+         }
+        </h5>
+    </span>
+  </body>
+</html>
