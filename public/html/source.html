@@ -2,11 +2,12 @@
 <html>
   <head>
     <title> Source </title>
+    <link rel="stylesheet" href="../style/source.css">
   </head>
   <body>
     <span id="index-frontend" class="sourcespan">
         <h3>index-frontend.js</h3>
-        <code>
+        <code class="code">
         document.addEventListener("DOMContentLoaded", function(event){
             require("../scripts/math.js");
             require("../scripts/onclick.js");
@@ -31,7 +32,7 @@
     </span>
     <span id="math" class="sourcespan">
         <h3>math.js</h3>
-        <code>
+        <code class="code">
             function math(op){
                 setVariables();
                 $.ajax({
@@ -52,7 +53,7 @@
 
     <span id="onclick" class="sourcespan">
         <h3>onclick.js</h3>
-        <code>
+        <code class="code">
             document.getElementById("add").onclick=function(){math("add")};
             document.getElementById("multiply").onclick=function(){math("multiply")};
             document.getElementById("sub1").onclick=function(){math("subtract1")};
