@@ -5,9 +5,9 @@
     <link rel="stylesheet" href="../style/source.css">
   </head>
   <body>
-    <span id="index-frontend" class="sourcespan">
+    <div id="index-frontend" class="sourcediv">
         <h3>index-frontend.js</h3>
-        <span class="code">
+        <div class="code">
         document.addEventListener("DOMContentLoaded", function(event){
             require("../scripts/math.js");
             require("../scripts/onclick.js");
@@ -28,11 +28,11 @@
                  }
              });
          }
-        </span>
-    </span>
-    <span id="math" class="sourcespan">
+        </div>
+    </div>
+    <div id="math" class="sourcediv">
         <h3>math.js</h3>
-        <span class="code">
+        <div class="code">
             function math(op){
                 setVariables();
                 $.ajax({
@@ -48,35 +48,35 @@
                         }
                     });
             }
-        </span>
-    </span>
+        </div>
+    </div>
 
-    <span id="onclick" class="sourcespan">
+    <div id="onclick" class="sourcediv">
         <h3>onclick.js</h3>
-        <span class="code">
+        <div class="code">
             document.getElementById("add").onclick=function(){math("add")};
             document.getElementById("multiply").onclick=function(){math("multiply")};
             document.getElementById("sub1").onclick=function(){math("subtract1")};
             document.getElementById("sub2").onclick=function(){math("subtract2")};
             document.getElementById("div1").onclick=function(){math("divide1")};
             document.getElementById("div2").onclick=function(){math("divide2")};
-        </span>
-    </span>
+        </div>
+    </div>
 
-    <span id="showResult" class="sourcespan">
+    <div id="showResult" class="sourcediv">
         <h3>showResult.js</h3>
-        <span class="code">
+        <div class="code">
             function showResult(result){
                 document.getElementById("ergebnisline").innerHTML = result;
                 document.getElementById("x").value = 0;
                 document.getElementById("y").value = 0;
             } 
-        </span>
-    </span>
+        </div>
+    </div>
 
-    <span id="vars" class="sourcespan">
+    <div id="vars" class="sourcediv">
         <h3>vars.js</h3>
-        <span class="code">
+        <div class="code">
             let xval = 0;
             let yval = 0;
             
@@ -92,8 +92,8 @@
                 setX();
                 setY();
             }
-        </span>
-    </span>
+        </div>
+    </div>
 
   </body>
 </html>
