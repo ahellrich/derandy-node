@@ -8,8 +8,8 @@ function math(op){
             success:function(result){
                 showResult(result);
             },
-            error:function(result){
-				console.log(result);
+            error:function(){
+				showResult("ERROR");
 			}
         });
 }
