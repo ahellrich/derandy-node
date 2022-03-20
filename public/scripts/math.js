@@ -6,7 +6,7 @@ function math(op){
             dataType: 'json',
             data: {x: xval, y: yval},
             success:function(result){
-				
+				alert(result);
                 showResult(result);
             },
             error:function(){
