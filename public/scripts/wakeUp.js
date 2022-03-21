@@ -7,7 +7,9 @@ $.ajax({
     dataType: 'json',
     data: {call: call},
     success:function(result){
-        console.log("Der Server sagt: "+result);
+        if(result.equals(42)){
+            console.log("Der Server ist wach...");
+        }
     },
     error:function(){
         console.log("Der Server schläft noch...");
