@@ -7,7 +7,7 @@ document.addEventListener("DOMContentLoaded", function(event){
    
   });
 
-  function require(script) {
+function require(script) {
     $.ajax({
         url: script,
         dataType: "script",
