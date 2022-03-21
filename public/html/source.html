@@ -1,196 +1,231 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title> Source </title>
-    <link rel="stylesheet" href="../style/source.css">
-  </head>
-  <body>
+<head>
+<title> Source </title>
+<link rel="stylesheet" href="../style/source.css">
+</head>
+<body>
 
-    <h1>Java Script</h1>
-    <br>
-    <div id="index-frontend" class="sourcediv">
-        <h3>index-frontend.js</h3>
-        <div class="code">
-        document.addEventListener("DOMContentLoaded", function(event){
-            require("../scripts/math.js");
-            require("../scripts/onclick.js");
-            require("../scripts/vars.js");
-            require("../scripts/showResult.js");
-           });
+<h1>Java Script</h1>
+<br>
+<div id="index-frontend" class="sourcediv">
+<h3>index-frontend.js</h3>
+<div class="code">
+    document.addEventListener("DOMContentLoaded", function(event){
+        require("../scripts/math.js");
+        require("../scripts/onclick.js");
+        require("../scripts/vars.js");
+        require("../scripts/showResult.js");
+    });
          
-           function require(script) {
-             $.ajax({
-                 url: script,
-                 dataType: "script",
-                 async: false,           
-                 success: function () {
-                     // all good...
-                 },
-                 error: function () {
-                     throw new Error("Could not load script " + script);
-                 }
-             });
-         }
-        </div>
+    function require(script) {
+        $.ajax({
+            url: script,
+            dataType: "script",
+            async: false,           
+            success: function () {
+                // all good...
+            },
+            error: function () {
+                throw new Error("Could not load script " + script);
+            }
+        });
+    }
+    </div>
     </div>
     <div id="math" class="sourcediv">
-        <h3>math.js</h3>
-        <div class="code">
-            function math(op){
-                setVariables();
-                $.ajax({
-                        url:"https://derandy-php.herokuapp.com/math.php",    
-                        type: "post",    
-                        dataType: 'json',
-                        data: {op: op, x: xval, y: yval},
-                        success:function(result){
-                            showResult(result);
-                        },
-                        error:function(){
-                            showResult("ERROR");
-                        }
-                    });
-            }
+    <h3>math.js</h3>
+    <div class="code">
+        function math(op){
+            setVariables();
+            $.ajax({
+                url:"https://derandy-php.herokuapp.com/math.php",    
+                type: "post",    
+                dataType: 'json',
+                data: {op: op, x: xval, y: yval},
+                success:function(result){
+                    showResult(result);
+                },
+                error:function(){
+                    showResult("ERROR");
+                }
+             });
+        }
         </div>
     </div>
 
     <div id="onclick" class="sourcediv">
-        <h3>onclick.js</h3>
-        <div class="code">
-            document.getElementById("add").onclick=function(){math("add")};
-            document.getElementById("multiply").onclick=function(){math("multiply")};
-            document.getElementById("sub1").onclick=function(){math("subtract1")};
-            document.getElementById("sub2").onclick=function(){math("subtract2")};
-            document.getElementById("div1").onclick=function(){math("divide1")};
-            document.getElementById("div2").onclick=function(){math("divide2")};
-        </div>
+    <h3>onclick.js</h3>
+    <div class="code">
+        document.getElementById("add").onclick=function(){math("add")};
+        document.getElementById("multiply").onclick=function(){math("multiply")};
+        document.getElementById("sub1").onclick=function(){math("subtract1")};
+        document.getElementById("sub2").onclick=function(){math("subtract2")};
+        document.getElementById("div1").onclick=function(){math("divide1")};
+        document.getElementById("div2").onclick=function(){math("divide2")};
+    </div>
     </div>
 
     <div id="showResult" class="sourcediv">
-        <h3>showResult.js</h3>
-        <div class="code">
-            function showResult(result){
-                document.getElementById("ergebnisline").innerHTML = result;
-                document.getElementById("x").value = 0;
-                document.getElementById("y").value = 0;
-            } 
-        </div>
+    <h3>showResult.js</h3>
+    <div class="code">
+        function showResult(result){
+            document.getElementById("ergebnisline").innerHTML = result;
+            document.getElementById("x").value = 0;
+            document.getElementById("y").value = 0;
+        } 
+    </div>
     </div>
 
     <div id="vars" class="sourcediv">
-        <h3>vars.js</h3>
-        <div class="code">
-            let xval = 0;
-            let yval = 0;
+    <h3>vars.js</h3>
+    <div class="code">
+        let xval = 0;
+        let yval = 0;
             
-            function setX(){
-                xval = document.getElementById("x").value;
-            }
+        function setX(){
+            xval = document.getElementById("x").value;
+        }
             
-            function setY(){
-                yval = document.getElementById("y").value;
-            }
+        function setY(){
+            yval = document.getElementById("y").value;
+        }
             
-            function setVariables(){
-                setX();
-                setY();
+        function setVariables(){
+            setX();
+            setY();
+        }
+    </div>
+    </div>
+    <div id="wakeup" class="sourcediv">
+    <h3>wakeUp.js</h3>
+    <div class="code">
+    // Diese Funktion dient dazu, die derandy-php App aufzuwecken,
+    // da kostenlose Heroku Apps, wenn sie nicht benötigt sind, schlafen.
+    let call = "Aufwachen!";
+    $.ajax({
+        url:"https://derandy-php.herokuapp.com/wakeUp.php",    
+        type: "post",    
+        dataType: 'json',
+        data: {call: call},
+        success:function(result){
+            if(result == 42){
+              console.log("Der Server ist wach...");
             }
-        </div>
-    </div><br><br>
+        },
+        error:function(){
+        console.log("Der Server schläft noch...");
+        }
+    });
+    </div>
+    </div>
+    
+    <br><br>
     <hr>
     <h1>PHP</h1>
     <br><br>
-    <div id="math" class="sourcediv">
-        <h3>math.php</h3>
-        <div class="code">
+    <div id="mathphp" class="sourcediv">
+    <h3>math.php</h3>
+    <div class="code">
         &lt;?php
-            header("Access-Control-Allow-Origin: *");
-            header("Access-Control-Allow-Headers: *");
+        header("Access-Control-Allow-Origin: *");
+        header("Access-Control-Allow-Headers: *");
 
-            function add($a,$b){
-                $x = $a;
-                $y = $b;
-                echo $x + $y;
+        function add($a,$b){
+            $x = $a;
+            $y = $b;
+            echo $x + $y;
+        }
+
+        function div1($a,$b){
+            $x = $a;
+            $y = $b;   
+            if($y!=0){
+                echo $x / $y;
             }
+            else
+                echo NAN;
+        }
 
-            function div1($a,$b){
-                $x = $a;
-                $y = $b;   
-                if($y!=0){
-                    echo $x / $y;
-                }
-                else
-                    echo NAN;
-                }
-
-            function div2($a,$b){
-                $x = $a;
-                $y = $b; 
-                if($x!=0){
-                    echo $y / $x;
-                }
-                else
-                    echo NAN;
-                }
-
-            function mult($a,$b){
-                $x = $a;
-                $y = $b;
-                echo $x * $y;
+        function div2($a,$b){
+            $x = $a;
+            $y = $b; 
+            if($x!=0){
+                echo $y / $x;
             }
+            else
+                echo NAN;
+        }
 
-            function sub1($a,$b){
-                $x = $a;
-                $y = $b;
-                echo $x - $y;
-            }
+        function mult($a,$b){
+            $x = $a;
+            $y = $b;
+            echo $x * $y;
+        }
 
-            function sub2($a,$b){
-                $x = $a;
-                $y = $b;
-                echo $y - $x;
-            }
+        function sub1($a,$b){
+            $x = $a;
+            $y = $b;
+            echo $x - $y;
+        }
+
+        function sub2($a,$b){
+            $x = $a;
+            $y = $b;
+            echo $y - $x;
+        }
 
 
-            function call_functions($op,$zahl1,$zahl2){
-                switch ($op) {
-                    case "add":            
-                        add($zahl1,$zahl2);
-                        break;
+        function call_functions($op,$zahl1,$zahl2){
+            switch ($op) {
+                case "add":            
+                    add($zahl1,$zahl2);
+                    break;
 
-                    case "divide1":
-                        div1($zahl1,$zahl2);
-                        break;
+                case "divide1":
+                    div1($zahl1,$zahl2);
+                    break;
 
-                    case "divide2":
-                        div2($zahl1,$zahl2);
-                        break;
+                case "divide2":
+                    div2($zahl1,$zahl2);
+                    break;
 
-                    case "multiply":            
-                        mult($zahl1,$zahl2);
-                        break;
+                case "multiply":            
+                    mult($zahl1,$zahl2);
+                    break;
                 
-                    case "subtract1":
-                        sub1($zahl1,$zahl2);
-                        break;
+                case "subtract1":
+                    sub1($zahl1,$zahl2);
+                    break;
                 
-                    case "subtract2":
-                        sub2($zahl1,$zahl2);
-                        break;
+                case "subtract2":
+                    sub2($zahl1,$zahl2);
+                    break;
                 }
             }
 
             if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-                    call_functions($_POST['op'],$_POST['x'], $_POST['y']);
-                }
-                if ($_SERVER['REQUEST_METHOD'] === 'GET') {
-                    echo "Schön, dass Sie hier sind, aber hier gibt es nichts zu sehen, die Datei ist für POST Befehle gedacht";
-                }
-
-        
-    
+                call_functions($_POST['op'],$_POST['x'], $_POST['y']);
+            }
+            if ($_SERVER['REQUEST_METHOD'] === 'GET') {
+                echo "Schön, dass Sie hier sind, aber hier gibt es nichts zu sehen, die Datei ist für POST Befehle gedacht";
+            }
         </div>
     </div>
-    
+    <div id="wakeupphp" class="sourcediv">
+        <h3>wakeUp.php</h3>
+        <div class="code">
+            &lt;?php
+            header("Access-Control-Allow-Origin: *");
+            header("Access-Control-Allow-Headers: *");
+            
+            if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+                echo 42;
+            }
+            if ($_SERVER['REQUEST_METHOD'] === 'GET') {
+                echo "Schön, dass Sie hier sind, aber hier gibt es nichts zu sehen, die Datei ist für POST Befehle gedacht";
+            }
+        </div>
+        </div>
   </body>
 </html>
